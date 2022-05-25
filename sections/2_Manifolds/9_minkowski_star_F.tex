@@ -1,0 +1,190 @@
+\section{Problem 9}
+In Minkowski Space, suppose $ \ast F = q  \sin{\theta}  \textrm{d} \theta  \wedge  \textrm{d} \phi$
+
+(a) Evaluate  $ \textrm{d} \ast F = \ast J $
+
+Admittedly, this problem gave me some trouble early on, as I wasn't sure exactly \textit{what} the question was asking; was it asking for me to solve for $ \ast J $, or was it just asking me to connect the dots between (SG 2.87) and (SG 1.96)? Ultimately, I ended up going down both roads. First we will connect the dots Carroll has set out for us, then we'll use this to express $ \ast J $ 
+
+Let's start from (SG 2.82), but we'll use $F$ instead of $A$. Recognize that Minkowski space is 4-dimensional, and $F$ is a two form, so we will expect $\ast F$ to be a two form as well, since the Hodge dual maps a $p$-form to an $(n-p)$ form. 
+%
+\begin{align}
+	(\ast F)_{\mu_1 \mu_2} = \frac{1}{2} \epsilon\indices{^{{\nu_1}{\nu_2}}_{{\mu_1}{\mu_2}}} F_{\nu_1 \nu_2}
+\end{align} 
+%
+Next, lower the indices on $\epsilon$, which we can do in Minkowski space with the metric $\eta$
+%
+\begin{align}
+	(\ast F)_{\mu_1 \mu_2} = \frac{1}{2} \eta\indices{^{\hat{\nu}\nu_1}}  \eta\indices{^{\bar{\nu}\nu_2}} \epsilon\indices{_{{\nu_1}{\nu_2}{\mu_1}{\mu_2}}} F_{\nu_1 \nu_2}
+\end{align} 
+%
+By inspection of the $\eta$s, we see that this will only contribute when $\hat{\nu} = \nu_1$ and $\bar{\nu} = \nu_2$, and $\nu_1 \neq \nu_2 \neq \mu_1 \neq \mu_2$. If $\nu_1=0$ or $\nu_2=0$, the metric will take the value $-1$, otherwise it is $+1$. We also see that all diagonal element of $\ast F$ will be $0$, i.e. $\mu_1 = \mu_2$. Now the expression above may still seem a bit cumbersome, but let's go ahead and use it to write out a few elements of $\ast F$. We do this by writing out explicitly the implied tensor summations, and we identify the indices which can contribute in each expression
+%
+\begin{align}
+	&(\ast F)_{0 1} \rightarrow \nu_1 = 2 \rightleftarrows \nu_2 = 3 \\
+	&(\ast F)_{0 1} = \frac{1}{2} \eta\indices{^{22}}  \eta\indices{^{33}} \epsilon\indices{_{2301}} F_{23} + \frac{1}{2} \eta\indices{^{33}}  \eta\indices{^{22}} \epsilon\indices{_{3201}} F_{32}
+\end{align}
+%
+Take a second to note that swapping indices on the Levi-Cevita tensor introduces a change of sign, and the anti-symmetric nature of $F$ means $F_{\mu\nu} = - F_{\nu\mu}$. This allows us to write the expression above as
+%
+\begin{align} \label{star_f_simple}
+	&(\ast F)_{0 1} = \eta\indices{^{22}}  \eta\indices{^{33}} \epsilon\indices{_{2301}} F_{23}
+\end{align}
+%
+Without diving deeply into the Levi-Cevita tensor, a few terms and their accompanying signs are presented here: 
+%
+\begin{align}
+\epsilon\indices{_{0123}}: +\\
+\epsilon\indices{_{0213}}: -\\
+\epsilon\indices{_{2013}}: +\\
+\epsilon\indices{_{2031}}: -\\
+\epsilon\indices{_{2301}}: +
+\end{align}
+%
+we can use the above to express \ref{star_f_simple}, filling in values for $\eta$ and $\epsilon$
+%
+\begin{align}
+	&(\ast F)_{0 1} = (+1) (+1) (+1) F_{23}\\
+	&(\ast F)_{0 1} = B_1
+\end{align}
+%
+This is an encouraging result; let's write out another few terms, skipping some of the more explicit steps now that we are more comfortable with the notation
+%
+\begin{align}
+	&(\ast F)_{0 2} \rightarrow \nu_1 = 1 \rightleftarrows \nu_2 = 3 \\
+	&(\ast F)_{0 2} = \eta\indices{^{11}}  \eta\indices{^{33}} \epsilon\indices{_{1302}} F_{13} \\
+	&(\ast F)_{0 2} = (+1) (+1) (-1) F_{13} \\
+	&(\ast F)_{0 2} = B_2
+\end{align}
+%
+\begin{align}
+	&(\ast F)_{2 1} \rightarrow \nu_1 = 0 \rightleftarrows \nu_2 = 3 \\
+	&(\ast F)_{2 1} = \eta\indices{^{00}}  \eta\indices{^{33}} \epsilon\indices{_{2103}} F_{03} \\
+	&(\ast F)_{2 1} = (-1) (+1) (-1) F_{03} \\
+	&(\ast F)_{2 1} = -E_3
+\end{align}
+%
+\begin{align}
+	&(\ast F)_{1 0} \rightarrow \nu_1 = 2 \rightleftarrows \nu_2 = 3 \\
+	&(\ast F)_{1 0} = (+1) (+1) (-1) F_{23} \\
+	&(\ast F)_{1 0} = -B_1
+\end{align}
+%
+\begin{align}
+	&(\ast F)_{1 2} \rightarrow \nu_1 = 0 \rightleftarrows \nu_2 = 3 \\
+	&(\ast F)_{1 2} = (-1) (+1) (+1) F_{03} \\
+	&(\ast F)_{1 2} = E_3
+\end{align}
+%
+What we are seeing here is that the act of operating on $F$ with the Hodge dual converts $E_i \rightarrow -B_i$, and $B_i \rightarrow E_i$. This is apparent when writing both $F$ and $\ast F$ in their matrix representations
+%
+\begin{align}
+	F_{\mu\nu} = \begin{bmatrix}
+		&0   &-E_1 &-E_2 &-E_3 \\ 
+		&E_1 &0    &B_3  &-B_2 \\
+		&E_2 &-B_3 &0    &B_1  \\
+		&E_3 &B_2  &-B_1 &0    \\
+	\end{bmatrix} 
+	\rightarrow
+	\ast F_{\mu\nu} = \begin{bmatrix}
+	&0   &B_1 &B_2 &B_3 \\ 
+	&-B_1 &0    &E_3  &-E_2 \\
+	&-B_2 &-E_3 &0    &E_1  \\
+	&-B_3 &E_2  &-E_1 &0    \\
+	\end{bmatrix}
+\end{align}	
+%
+where $F_{\mu\nu}$ is given to us in (SG 1.69)
+
+Our next step is to apply the exterior derivative to $\ast F$. We start by using (SG 2.76), again swapping our $\ast F$ for $A$
+%
+\begin{align}
+	\left(\textrm{d} \ast F\right)_{\mu_1\mu_2\mu_3} = (p+1) \partial_{[\mu_1} \ast F_{\mu_2\mu_3]}
+\end{align}
+%
+where the brackets on the lower indices imply the anti-symmetric sum. Also note here that $p=2$ as a two-form, and both the exterior derivative, as well as $\ast J$ are expected to be three-forms. The above expression can be written explicitly using (SG 1.80) as 
+%
+\begin{align}
+	\left(\textrm{d} \ast F\right)_{\mu_1\mu_2\mu_3} = 3 \left(\frac{1}{3!}\right) \left[ \partial_{\mu_1} \ast F_{\mu_2\mu_3} - \partial_{\mu_1} \ast F_{\mu_3\mu_2} + \partial_{\mu_2} \ast F_{\mu_3\mu_1} - \partial_{\mu_2} \ast F_{\mu_1\mu_3} + \partial_{\mu_3} \ast F_{\mu_1\mu_2} - \partial_{\mu_3} \ast F_{\mu_2\mu_1} \right]
+\end{align}
+%
+Again, we can use the anti-symmetric properties of $F$ to collect terms and multiply through leading factors as 
+%
+\begin{align}
+	\left(\textrm{d} \ast F\right)_{\mu_1\mu_2\mu_3} = \left[ \partial_{\mu_1} \ast F_{\mu_2\mu_3} + \partial_{\mu_2} \ast F_{\mu_3\mu_1}  + \partial_{\mu_3} \ast F_{\mu_1\mu_2} \right] = \ast J_{\mu_1\mu_2\mu_3} 
+\end{align}
+%
+We see that these are three-forms, as expected, but note that we would need to find $4^3 = 64$ individual terms, cumbersome indeed! To address this, let's evaluate the RHS of the above equation more explicitly, using our definition of the Hodge dual from (SG 2.82) again, and taking care to keep track of raised and lowered indices on $J$
+%
+\begin{align}
+\ast J_{\mu_1\mu_2\mu_3} &= \frac{1}{1!} \epsilon\indices{^{{\bar{\nu_1}}}_{{\mu_1}{\mu_2}{\mu_3}}} J_{\bar{\nu_1}} 
+= \epsilon\indices{^{{\bar{\nu_1}}}_{{\mu_1}{\mu_2}{\mu_3}}} \eta\indices{_{\bar{\nu_1}\nu_1}} J\indices{^{\nu_1}}
+= \epsilon\indices{_{{\nu_1}{\mu_1}{\mu_2}{\mu_3}}} J\indices{^{\nu_1}}
+\end{align} 
+%
+Notice that we will only expect contributions from unique combinations of indices on $\epsilon$. Let's go ahead and write out a few terms. 
+%
+\begin{center}
+	\begin{tabular}{| c | c | c | c | c |} 
+		\hline
+		$\mu_1$ & $\mu_2$ & $\mu_3$ & $\partial_{\mu_1} \ast F_{\mu_2\mu_3} + \partial_{\mu_2} \ast F_{\mu_3\mu_1} + \partial_{\mu_3} \ast F_{\mu_1\mu_2}$ & $\ast J_{\mu_1 \mu_2 \mu_3}$ \\
+		\hline\hline
+		0 & 0 & 0 & 0 & 0 \\ 
+		0 & 1 & 2 & $\partial_{0} \ast F_{12} + \partial_{1} \ast F_{20} + \partial_{2} \ast F_{01}$ & $\epsilon\indices{_{{3}{0}{1}{2}}}J^3$\\
+		. & . & . & $\partial_{t} E_3 - \partial_{1} B_2 + \partial_{2} B_1$ & $-J^3$ \\
+		\hline
+	\end{tabular}
+\end{center}
+%
+We see that this is exactly the component wise expression of Maxwell's equations given in (SG 1.93 - equation 1) $\tilde{\epsilon}\indices{^{ijk}}\partial_j B_k - \partial_0 E^i = J^i$. Writing out a few more expressions 
+%
+\begin{center}
+	\begin{tabular}{| c | c | c | c | c |} 
+		\hline
+		$\mu_1$ & $\mu_2$ & $\mu_3$ & $\partial_{\mu_1} \ast F_{\mu_2\mu_3} + \partial_{\mu_2} \ast F_{\mu_3\mu_1} + \partial_{\mu_3} \ast F_{\mu_1\mu_2}$ & $\ast J_{\mu_1 \mu_2 \mu_3}$ \\
+		\hline\hline
+		1 & 0 & 3 &  -$\partial_{1} B_3 - \partial_{3} B_1 + \partial_{t} E_2$ & $\epsilon\indices{_{{1}{0}{3}{2}}}J^2 = J^2$\\
+		3 & 2 & 1 &  -$\partial_{3} E_3 - \partial_{2} E_2 - \partial_{1} E_1$ & $\epsilon\indices{_{{0}{3}{2}{1}}}J^0 = -J^0$\\
+		\hline
+	\end{tabular}
+\end{center}
+%
+Where the first line in the table above gives another set of equations (SG 1.93 - equation 1), and the second line shows (SG 1.93 - equation 2) $\partial_i E^i = J^0$. Thus we have shown how we can express $ \textrm{d} \ast F = \ast J $ as being equivalent to $\partial_\mu F\indices{^{\nu\mu}} = J^\nu$, and we have connected the dots from (SG 2.87) to (SG 1.96). This is the more complicated half of the simple differential form expressions for Maxwell's equations, the other being the intrinsically obvious (SG 2.85 $\rightarrow$ 1.97) $ \textrm{d} F = 0 \rightarrow \partial_{[\mu}F_{\nu\lambda]} = 0$. 
+
+As far as what the book is actually asking us to find, this may be a good stopping point for part a. In part b we are asked to find the two-form F. Either way, our next step is to actually evaluate our expression for $\ast F$. I chose to tackle this as the final step in part a, which streamlines our work in part b. Starting from (SG 2.78) 
+%
+\begin{align}
+	\textrm{d} (\ast F) &= \textrm{d} \left( q  \sin{\theta}  \textrm{d} \theta  \wedge  \textrm{d} \phi \right)\\
+	 &= \textrm{d} \left( q  \sin{\theta}  \textrm{d} \theta \right)  \wedge  \textrm{d} \phi \ + \ (-1)^2 q  \sin{\theta}  \textrm{d} \theta \wedge \cancelto{0}{\textrm{d} \left(\textrm{d} \phi\right)}\\
+	 &= \big( \textrm{d}  \left( q  \sin{\theta} \right)  \textrm{d} \theta + q  \sin{\theta} \ \cancelto{0}{\textrm{d} \left( \textrm{d} \theta \right)} \big) \wedge  \textrm{d} \phi\\
+	 \label{wedge_product}&= q \big( \textrm{d} \left(\sin{\theta} \right)  \textrm{d} \theta \big) \wedge  \textrm{d} \phi
+\end{align} 
+%
+Fortunately a number of terms canceled out, as we made use of (SG 2.80) $\textrm{d} \left( \textrm{d} A \right) = 0$. Now we write out the exterior derivatives explicitly
+%
+\begin{align}
+\textrm{d} \left(\sin{\theta} \right) = \partial_{\mu_1} \sin{\theta} \\
+\textrm{d} \theta = \partial_{\mu_2} \theta\\
+\textrm{d} \phi = \partial_{\mu_3}\phi
+\end{align} 
+%
+and we use these to write out our wedge product above in \ref{wedge_product} more explicitly
+%
+\begin{align}
+ \textrm{d} (\ast F) &= q \big( \partial_{\mu_1} \left(\sin{\theta}\right)  \partial_{\mu_2} \theta \big) \wedge  \partial_{\mu_3}\phi
+\end{align} 
+%
+and taking this a step further we'll express this with our definition of the wedge product as given in (SG 2.73)
+%
+\begin{align}
+	\textrm{d} (\ast F) &= q \left( \frac{3!}{2!} \right)\partial_{[\mu_1} \left(\sin{\theta}\right) \ \partial_{\mu_2} \theta \ \partial_{\mu_3]}\phi = \ast J_{\mu_1\mu_2\mu_3} 
+\end{align} 
+%
+This is, and can be used as, a useful expression for $\textrm{d} (\ast F)$ as we shall see in part b next. As you shall see, part a and b flow into one another well, but the text does not make it obvious where the stopping point should be; here makes sense to me. 
+
+--------------------------
+
+(b) What is the two-form $F$ 
+
+(c) What are the electric and magnetic fields equal to for this solution? 
+
+(d) Evaluate $ \int\limits_{V} \textrm{d} \ast F $ where $V$ is a ball of radius $R$ in euclidean three spaced at a fixed moment of time
