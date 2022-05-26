@@ -61,7 +61,7 @@
 
 % First, let us announce ourselves.
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{uicthesi}[1996/01/31 v1.2 University of Illinois at Chicago Thesis Class]
+\ProvidesClass{uicthesi_modified}[1996/01/31 v1.2 University of Illinois at Chicago Thesis Class]
 %
 % BEGIN OPTIONS
 %

@@ -5,7 +5,7 @@ In Minkowski Space, suppose $ \ast F = q  \sin{\theta}  \textrm{d} \theta  \wedg
 
 Admittedly, this problem gave me some trouble early on, as I wasn't sure exactly \textit{what} the question was asking; was it asking for me to solve for $ \ast J $, or was it just asking me to connect the dots between (SG 2.87) and (SG 1.96)? Ultimately, I ended up going down both roads. First we will connect the dots Carroll has set out for us, then we'll use this to express $ \ast J $ 
 
-Let's start from (SG 2.82), but we'll use $F$ instead of $A$. Recognize that Minkowski space is 4-dimensional, and $F$ is a two form, so we will expect $\ast F$ to be a two form as well, since the Hodge dual maps a $p$-form to an $(n-p)$ form. 
+Let's start from (SG 2.82), but we'll use $F$ instead of $A$. Recognize that Minkowski space is 4-dimensional, and $F$ is a two form, so we will expect $\ast F$ to be a two form as well, since the Hodge dual maps a $p$-form to an $(n-p)$ form. Importantly, recognize that both $\theta$ and $\phi$ are zero-forms, and correspond to spherical coordinates, i.e. the $r, \theta, \phi$ of spherical coordinates in euclidean space. 
 %
 \begin{align}
 	(\ast F)_{\mu_1 \mu_2} = \frac{1}{2} \epsilon\indices{^{{\nu_1}{\nu_2}}_{{\mu_1}{\mu_2}}} F_{\nu_1 \nu_2}
@@ -181,9 +181,31 @@ and taking this a step further we'll express this with our definition of the wed
 %
 This is, and can be used as, a useful expression for $\textrm{d} (\ast F)$ as we shall see in part b next. As you shall see, part a and b flow into one another well, but the text does not make it obvious where the stopping point should be; here makes sense to me. 
 
---------------------------
-
 (b) What is the two-form $F$ 
+
+We start by finding $F$ from (SG 2.83) by applying the star operator again
+%
+\begin{align}
+\ast \ast F &= (-1)^{s + p\left(n-p\right)} F
+\end{align} 
+%
+where $n = 4$ is the dimensionality of Minkowski space, $p=2$ because $F$ is a two-form, and $s=1$ where $s$ is the number of minus signs in the eigenvalues of the metric. Plugging these in, we find  
+%
+\begin{align}
+F &= - \ast \ast F = - \ast \big( q \sin{\theta}  \textrm{d} \theta  \wedge  \textrm{d} \phi \big)
+\end{align} 
+%
+and using (SG 2.84), where we let $U_{\mu_1} = \sin{\theta}  \textrm{d} \theta$ and $V_{\mu_2} =  \textrm{d} \phi$ both one-forms, we can write 
+%
+\begin{align}
+F &= - q \epsilon\indices{_{\mu_3 \mu_4}^{\mu_1 \mu_2}} U_{\mu_1} V_{\mu_2} \\
+&= - q \epsilon\indices{_{\mu_3 \mu_4}^{\mu_1 \mu_2}} \ \sin{\theta} \ \partial_{\mu_1} \theta \ \partial_{\mu_2} \phi
+\end{align} 
+%
+where we have gone ahead and written the exterior derivative of the zero-forms as explicit partial derivatives using (SG 2.77) 
+
+Now let's try to cite in \cite{Erricolo} for the next step
+
 
 (c) What are the electric and magnetic fields equal to for this solution? 
 
