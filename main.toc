@@ -2,3 +2,7 @@
 \contentsline {chapter}{\numberline {1}Special Relativity and Flat Spacetime}{3}{chapter.1}
 \contentsline {chapter}{\numberline {2}Manifolds}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Problem 9}{5}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.a}Evaluate $ \textrm {d} \ast F = \ast J $}{5}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.b}b}{9}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.c}c}{9}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.d}d}{9}{subsection.2.1.4}
