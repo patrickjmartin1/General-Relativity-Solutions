@@ -1,5 +1,5 @@
-\section{Problem 9}
-In Minkowski Space, suppose $ \ast F = q  \sin{\theta}  \textrm{d} \theta  \wedge  \textrm{d} \phi$
+\section{In Minkowski Space, suppose $ \ast F = q  \sin{\theta}  \textrm{d} \theta  \wedge  \textrm{d} \phi$}
+
 
 \subsection{Evaluate  $ \textrm{d} \ast F = \ast J $}
 
@@ -33,45 +33,45 @@ Take a second to note that swapping indices on the Levi-Cevita tensor introduces
 Without diving deeply into the Levi-Cevita tensor, a few terms and their accompanying signs are presented here: 
 %
 \begin{align}
-\epsilon\indices{_{0123}}: +\\
-\epsilon\indices{_{0213}}: -\\
-\epsilon\indices{_{2013}}: +\\
-\epsilon\indices{_{2031}}: -\\
+\epsilon\indices{_{0123}}: + \notag \\
+\epsilon\indices{_{0213}}: - \notag \\
+\epsilon\indices{_{2013}}: + \notag \\
+\epsilon\indices{_{2031}}: - \notag \\
 \epsilon\indices{_{2301}}: +
 \end{align}
 %
 we can use the above to express \ref{star_f_simple}, filling in values for $\eta$ and $\epsilon$
 %
 \begin{align}
-	&(\ast F)_{0 1} = (+1) (+1) (+1) F_{23}\\
+	&(\ast F)_{0 1} = (+1) (+1) (+1) F_{23} \notag \\
 	&(\ast F)_{0 1} = B_1
 \end{align}
 %
 This is an encouraging result; let's write out another few terms, skipping some of the more explicit steps now that we are more comfortable with the notation
 %
 \begin{align}
-	&(\ast F)_{0 2} \rightarrow \nu_1 = 1 \rightleftarrows \nu_2 = 3 \\
-	&(\ast F)_{0 2} = \eta\indices{^{11}}  \eta\indices{^{33}} \epsilon\indices{_{1302}} F_{13} \\
-	&(\ast F)_{0 2} = (+1) (+1) (-1) F_{13} \\
+	&(\ast F)_{0 2} \rightarrow \nu_1 = 1 \rightleftarrows \nu_2 = 3  \notag \\
+	&(\ast F)_{0 2} = \eta\indices{^{11}}  \eta\indices{^{33}} \epsilon\indices{_{1302}} F_{13}  \notag \\
+	&(\ast F)_{0 2} = (+1) (+1) (-1) F_{13}  \notag \\
 	&(\ast F)_{0 2} = B_2
 \end{align}
 %
 \begin{align}
-	&(\ast F)_{2 1} \rightarrow \nu_1 = 0 \rightleftarrows \nu_2 = 3 \\
-	&(\ast F)_{2 1} = \eta\indices{^{00}}  \eta\indices{^{33}} \epsilon\indices{_{2103}} F_{03} \\
-	&(\ast F)_{2 1} = (-1) (+1) (-1) F_{03} \\
+	&(\ast F)_{2 1} \rightarrow \nu_1 = 0 \rightleftarrows \nu_2 = 3  \notag \\
+	&(\ast F)_{2 1} = \eta\indices{^{00}}  \eta\indices{^{33}} \epsilon\indices{_{2103}} F_{03}  \notag \\
+	&(\ast F)_{2 1} = (-1) (+1) (-1) F_{03}  \notag \\
 	&(\ast F)_{2 1} = -E_3
 \end{align}
 %
 \begin{align}
-	&(\ast F)_{1 0} \rightarrow \nu_1 = 2 \rightleftarrows \nu_2 = 3 \\
-	&(\ast F)_{1 0} = (+1) (+1) (-1) F_{23} \\
+	&(\ast F)_{1 0} \rightarrow \nu_1 = 2 \rightleftarrows \nu_2 = 3  \notag \\
+	&(\ast F)_{1 0} = (+1) (+1) (-1) F_{23}  \notag \\
 	&(\ast F)_{1 0} = -B_1
 \end{align}
 %
 \begin{align}
-	&(\ast F)_{1 2} \rightarrow \nu_1 = 0 \rightleftarrows \nu_2 = 3 \\
-	&(\ast F)_{1 2} = (-1) (+1) (+1) F_{03} \\
+	&(\ast F)_{1 2} \rightarrow \nu_1 = 0 \rightleftarrows \nu_2 = 3  \notag \\
+	&(\ast F)_{1 2} = (-1) (+1) (+1) F_{03}  \notag \\
 	&(\ast F)_{1 2} = E_3
 \end{align}
 %
@@ -104,13 +104,13 @@ Our next step is to apply the exterior derivative to $\ast F$. We start by using
 where the brackets on the lower indices imply the anti-symmetric sum. Also note here that $p=2$ as a two-form, and both the exterior derivative, as well as $\ast J$ are expected to be three-forms. The above expression can be written explicitly using (SG 1.80) as 
 %
 \begin{align}
-	\left(\textrm{d} \ast F\right)_{\mu_1\mu_2\mu_3} = 3 \left(\frac{1}{3!}\right) \left[ \partial_{\mu_1} \ast F_{\mu_2\mu_3} - \partial_{\mu_1} \ast F_{\mu_3\mu_2} + \partial_{\mu_2} \ast F_{\mu_3\mu_1} - \partial_{\mu_2} \ast F_{\mu_1\mu_3} + \partial_{\mu_3} \ast F_{\mu_1\mu_2} - \partial_{\mu_3} \ast F_{\mu_2\mu_1} \right]
+	\left(\textrm{d} \ast F\right)_{\mu_1\mu_2\mu_3} = 3 \left(\frac{1}{3!}\right) \left[ \partial_{\mu_1} \ast F_{\mu_2\mu_3} - \partial_{\mu_1} \ast F_{\mu_3\mu_2} + \partial_{\mu_2} \ast F_{\mu_3\mu_1}  \right. \notag \\ \left. - \partial_{\mu_2} \ast F_{\mu_1\mu_3} + \partial_{\mu_3} \ast F_{\mu_1\mu_2} - \partial_{\mu_3} \ast F_{\mu_2\mu_1} \right]
 \end{align}
 %
 Again, we can use the anti-symmetric properties of $F$ to collect terms and multiply through leading factors as 
 %
 \begin{align}
-	&\left(\textrm{d} \ast F\right)_{\mu_1\mu_2\mu_3} = \\ &\left[ \partial_{\mu_1} \ast F_{\mu_2\mu_3} + \partial_{\mu_2} \ast F_{\mu_3\mu_1}  + \partial_{\mu_3} \ast F_{\mu_1\mu_2} \right] = \ast J_{\mu_1\mu_2\mu_3} 
+	&\left(\textrm{d} \ast F\right)_{\mu_1\mu_2\mu_3} = \notag \\ &\left[ \partial_{\mu_1} \ast F_{\mu_2\mu_3} + \partial_{\mu_2} \ast F_{\mu_3\mu_1}  + \partial_{\mu_3} \ast F_{\mu_1\mu_2} \right] = \ast J_{\mu_1\mu_2\mu_3} 
 \end{align}
 %
 We see that these are three-forms, as expected, but note that we would need to find $4^3 = 64$ individual terms, cumbersome indeed! To address this, let's evaluate the RHS of the above equation more explicitly, using our definition of the Hodge dual from (SG 2.82) again, and taking care to keep track of raised and lowered indices on $J$
@@ -153,9 +153,9 @@ Where the first line in the table above gives another set of equations (SG 1.93 
 As far as what the book is actually asking us to find, this may be a good stopping point for part a. In part b we are asked to find the two-form F. Either way, our next step is to actually evaluate our expression for $\ast F$. I chose to tackle this as the final step in part a, which streamlines our work in part b. Starting from (SG 2.78) 
 %
 \begin{align}
-	\textrm{d} (\ast F) &= \textrm{d} \left( q  \sin{\theta}  \textrm{d} \theta  \wedge  \textrm{d} \phi \right)\\
-	 &= \textrm{d} \left( q  \sin{\theta}  \textrm{d} \theta \right)  \wedge  \textrm{d} \phi \ + \ (-1)^2 q  \sin{\theta}  \textrm{d} \theta \wedge \cancelto{0}{\textrm{d} \left(\textrm{d} \phi\right)}\\
-	 &= \big( \textrm{d}  \left( q  \sin{\theta} \right)  \textrm{d} \theta + q  \sin{\theta} \ \cancelto{0}{\textrm{d} \left( \textrm{d} \theta \right)} \big) \wedge  \textrm{d} \phi\\
+	\textrm{d} (\ast F) &= \textrm{d} \left( q  \sin{\theta}  \textrm{d} \theta  \wedge  \textrm{d} \phi \right) \notag \\
+	 &= \textrm{d} \left( q  \sin{\theta}  \textrm{d} \theta \right)  \wedge  \textrm{d} \phi \ + \ (-1)^2 q  \sin{\theta}  \textrm{d} \theta \wedge \cancelto{0}{\textrm{d} \left(\textrm{d} \phi\right)} \notag \\
+	 &= \big( \textrm{d}  \left( q  \sin{\theta} \right)  \textrm{d} \theta + q  \sin{\theta} \ \cancelto{0}{\textrm{d} \left( \textrm{d} \theta \right)} \big) \wedge  \textrm{d} \phi \notag \\
 	 \label{wedge_product}&= q \big( \textrm{d} \left(\sin{\theta} \right)  \textrm{d} \theta \big) \wedge  \textrm{d} \phi
 \end{align} 
 %
@@ -181,8 +181,7 @@ and taking this a step further we'll express this with our definition of the wed
 %
 This is, and can be used as, a useful expression for $\textrm{d} (\ast F)$ as we shall see in part b next. As you shall see, part a and b flow into one another well, but the text does not make it obvious where the stopping point should be; here makes sense to me. 
 
-\subsection{b}
-What is the two-form $F$ 
+\subsection{What is the two-form $F$ equal to?}
 
 We start by finding $F$ from (SG 2.83) by applying the star operator again
 %
@@ -199,17 +198,69 @@ F &= - \ast \ast F = - \ast \big( q \sin{\theta}  \textrm{d} \theta  \wedge  \te
 and using (SG 2.84), where we let $U_{\mu_1} = \sin{\theta}  \textrm{d} \theta$ and $V_{\mu_2} =  \textrm{d} \phi$ both one-forms, we can write 
 %
 \begin{align}
-F &= - q \epsilon\indices{_{\mu_3 \mu_4}^{\mu_1 \mu_2}} U_{\mu_1} V_{\mu_2} \\
+F_{\mu_3 \mu_4} &= - q \epsilon\indices{_{\mu_3 \mu_4}^{\mu_1 \mu_2}} U_{\mu_1} V_{\mu_2} \\
 &= - q \epsilon\indices{_{\mu_3 \mu_4}^{\mu_1 \mu_2}} \ \sin{\theta} \ \partial_{\mu_1} \theta \ \partial_{\mu_2} \phi
 \end{align} 
 %
-where we have gone ahead and written the exterior derivative of the zero-forms as explicit partial derivatives using (SG 2.77) 
+where we have gone ahead and written the exterior derivative of the zero-forms as explicit partial derivatives using (SG 2.77).
 
-Now we have a placeholder citation here, where we will pick up next \cite{Wiki:1}
+Now we must address the question of, "what are $ \partial_{\mu_1} \theta \ $ and $\partial_{\mu_2} \phi$? Again, our guiding principal is to write these terms out explicitly 
+%
+\begin{align}
+\partial_{\mu_1} \theta &= \frac{\partial  \theta}{\partial  x\indices{^{\mu_1}}} \\ \label{F_explicit}
+\partial_{\mu_2} \phi &= \frac{\partial  \phi}{\partial  x\indices{^{\mu_2}}} 
+\end{align} 
+%
+and we see that each term corresponds to the derivative of a spherical coordinate with respect to the underlying Cartesian coordinates. Thought of another way, these are elements of the coordinate transformation matrix as outlined in Appendix \ref{appendix_coord_trans}. Fortunately, these relations are well known, as we were able to use the transformation matrix $\frac{\partial{\rho, \theta, \phi}}{\partial{x, y, z}}$ as given in \cite{Wiki:1}. Armed with our explicit expression in \ref{F_explicit}, we can start to write some of the terms of $F$. Let's with the low hanging fruit, first
+%
+\begin{align}
+	\partial_{0} \theta &=\partial_{0} \phi = \frac{\partial  \theta}{\partial  t} = \frac{\partial  \phi}{\partial  t} = 0
+\end{align} 
+%
+which leads us to recognize that only components of $F$ with an index equal to $0$ will contribute to $F$. Said another way, in the matrix representation of $F$, only the first row and first column will have non-zero elements. In a similar vein, because \ref{F_explicit} contains $\epsilon$, we know that all diagonal elements of $F$ are also equal to $0$, and we only need to consider non-identical expressions of $\mu_1$ and $\mu_2$. Along with the anti-symmetric nature of $F$, we need really only evaluate three terms of $F$, $F_{01}, F_{02}, F_{03}$, from which we will get their anti-symmetric components as well. One last note concerning the epsilon, is that we can see from inspection that we will have no $\mu_1$ or $\mu_2$ equal to zero, thus we can trivially lower indices on $\epsilon$ and ignore the metric $\eta$ which we would otherwise need to lower indices. Our last shortcut is to recognize that $\partial_3 \phi = 0$. Now we tackle the explicit expression.
+%
+\begin{align}
+	F_{0 1} &= - q \sin{\theta} \big( \epsilon\indices{_{0123}} \ \partial_{2} \theta \ \partial_{3} \phi +  \epsilon\indices{_{0132}} \ \partial_{3} \theta \ \partial_{2} \phi \big) \\
+	&= - q \sin{\theta} \bigg( \epsilon\indices{_{0132}} \frac{-\sqrt{x^2 + y^2}}{\rho^2} \frac{x}{x^2 + y^2} \bigg) \\
+	&= - q \sin{\theta} \frac{1}{\rho^2} \frac{x}{\sqrt{x^2 + y^2}} \\
+	&= - q \sin{\theta} \cos{\phi} \frac{1}{\rho^2} \\
+	&= - q \frac{x}{\rho^3}
+\end{align} 
+%
+Excellent, a simple result, and one that looks awfully similar to Coulomb's law! Note that we made copious use of the relations in \cite{Wiki:1}. Let's waste no time and move on to the next term.
+%
+\begin{align}
+	F_{0 2} &= - q \sin{\theta} \big( \epsilon\indices{_{0213}} \ \partial_{1} \theta \ \partial_{3} \phi +  \epsilon\indices{_{0231}} \ \partial_{3} \theta \ \partial_{1} \phi \big) \\
+	&= - q \sin{\theta} \bigg( \epsilon\indices{_{0231}} \frac{-\sqrt{x^2 + y^2}}{\rho^2} \frac{-y}{x^2 + y^2} \bigg) \\
+	&= - q \sin{\theta} \frac{1}{\rho^2} \frac{y}{\sqrt{x^2 + y^2}} \\
+	&= - q \sin{\theta} \sin{\phi} \frac{1}{\rho^2} \\
+	&= - q \frac{y}{\rho^3}
+\end{align} 
+% 
+Again, exactly as we would hope. The last term is 
+%
+\begin{align}
+	F_{0 3} &= - q \sin{\theta} \big( \epsilon\indices{_{0312}} \ \partial_{1} \theta \ \partial_{2} \phi +  \epsilon\indices{_{0321}} \ \partial_{2} \theta \ \partial_{1} \phi \big) \\
+	&= - q \sin{\theta} \bigg(\frac{xz}{\rho^2 \sqrt{x^2 + y^2}} \frac{x}{x^2 + y^2} + \frac{yz}{\rho^2 \sqrt{x^2 + y^2}} \frac{y}{x^2 + y^2}\bigg) \\
+	&= - q \sin{\theta} \ z \bigg(\frac{x^2 + y^2}{\rho^2 \sqrt{x^2 + y^2} \left(x^2 + y^2\right)} \bigg) \\
+	&= - q \sin{\theta} \frac{1}{\rho^2} \frac{z}{\sqrt{x^2 + y^2}} \\
+	&= - q \sin{\theta} \frac{1}{\rho^2} \frac{1}{\left(\frac{\sqrt{x^2 + y^2}}{z}\right)} \\
+	&= - q \sin{\theta} \frac{1}{\rho^2} \frac{1}{\tan{\theta}} \\
+	&= - q \sin{\theta} \frac{1}{\rho^2} \frac{\cos{\theta}}{\sin{\theta}} \\
+	&= - q \frac{z}{\rho^3}
+\end{align} 
+% 
+Again, exactly as we hoped! Let's write out our full $F$ in matrix representation
+%
+\begin{align}
+	F_{\mu\nu} = \frac{q}{\rho^3} \begin{bmatrix}
+		& 0 & -x  &-y & -z\\ 
+		& x & 0 &0 &0 \\
+		& y & 0 &0 &0 \\
+		& z & 0 &0 &0 \\
+	\end{bmatrix} 
+\end{align}	
+\subsection{What are the electric and magnetic fields equal to for this solution?}
+The electric field for this expression is just the electric field for a point charge $q$ stationary at the origin, i.e. the simplest example of Coulomb's law. The magnetic field is equal to $0$. This is a rewarding solution for this problem. 
 
-
-\subsection{c}
-What are the electric and magnetic fields equal to for this solution? 
-
-\subsection{d}
-Evaluate $ \int\limits_{V} \textrm{d} \ast F $ where $V$ is a ball of radius $R$ in euclidean three spaced at a fixed moment of time
+\subsection{Evaluate $ \int\limits_{V} \textrm{d} \ast F $ where $V$ is a ball of radius $R$ in euclidean three space at a fixed moment of time.}
