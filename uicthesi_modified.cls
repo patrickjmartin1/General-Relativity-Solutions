@@ -116,7 +116,7 @@
 % The type size option is handled by reading uicth11.clo
 % There is no alternates to the default 11 point style.
 
-\input uicth11.clo\relax
+\input uicth11.clo \relax
 
 %
 
@@ -1069,124 +1069,6 @@
 % END CHAPTERS AND SECTIONS
 %
 
-%
-% BEGIN BIBLIOGRAPHY
-%
-% \subsection{Bibliography}
-%    \begin{macrocode}
-\def\bibforma{\@bibformatrue\bibliographystyle{forma}}
-\def\bibformb{\@bibformafalse\bibliographystyle{formb}}
-\def\bibformc{\@bibformafalse\bibliographystyle{formc}}
-
-\def\bibob{(}\def\bibcb{)}
-\def\roundbrackets{\def\bibob{(}\def\bibcb{)}}
-\def\squarebrackets{\def\bibob{[}\def\bibcb{]}}
-\def\nobrackets{\def\bibob{}\def\bibcb{}}
-\def\bibdatesep{,\ }
-\def\bibmultisep{;}
-\def\egrp/{\egroup}
-
- \def\@citex[#1]#2{\if@filesw\immediate\write\@auxout{\string\citation{#2}}\fi
-  \def\@citea{}\@cite{\@for\@citeb:=#2\do
-    {\@citea\def\@citea{\bibmultisep\penalty\@m\ }\@ifundefined
-       {b@\@citeb}{{\bfseries ?}\@warning
-       {Citation `\@citeb' on page \thepage \space undefined}}%
-{\csname b@\@citeb\endcsname}}}{#1}}
-
-\def\@cite#1#2{{#1\if@tempswa \bibdatesep #2\fi}}
-
-\let\@internalcite\@citex
-
-\def\cite{\@ifnextchar[{\@tempswatrue\@namecite}%
-    {\@tempswafalse\@namecite[]}}
-
-\def\@namecite[#1]#2{\bibob\def\citename##1{##1\bibdatesep}%
-    \@internalcite[#1]{#2}\bibcb}
-
-%% original
-\def\@lbibitem[#1]#2{\item[]\if@filesw
-      { \def\protect##1{\string ##1\space}\immediate
-        \write\@auxout{\string\bibcite{#2}{#1}}}\fi\ignorespaces}
-
-%% from one of the internets:
-%% \makeatletter
-%% \def\@lbibitem[#1]#2{%
-%% \if\relax\@extra@b@citeb\relax\else
-%% \@ifundefined{br@#2\@extra@b@citeb}{}{%
-%% \@namedef{br@#2}{\@nameuse{br@#2\@extra@b@citeb}}}\fi
-%% \@ifundefined{b@#2\@extra@b@citeb}{\def\NAT@num{}}{\NAT@parse{#2}}%
-%% \item[\hfil\hyper@natanchorstart{#2\@extra@b@citeb}\citep{#2}%
-%% \hyper@natanchorend]%
-%% \NAT@ifcmd#1(@)(@)\@nil{#2}}
-%% \makeatother
-
-
-
-\def\bibliography#1{
-   \clearpage
-   \typeout{CITED LITERATURE.}
-   \addtocontents{toc}{\protect\addvspace{\baselineskip}}
-   \addcontentsline{toc}{chapter}
-      {\protect\xnumberline{\ }CITED LITERATURE}
-   \def\section@mark{CITED LITERATURE}
-   \pagestyle{pageontop}
-   \thispagestyle{pageonbottom}
-   \@makeschapterhead{\section@mark}\par
-   \begin{singlespace}
-   \if@filesw\immediate\write\@auxout{\string\bibdata{#1}}\fi
-   \@input{\jobname.bbl}
-   \end{singlespace}}
-
-\def\thebibliography#1{
-   \if@bibforma
-      \list{\relax}
-         {\setlength{\labelsep}{0em}
-          \setlength{\itemsep}{12pt}
-          \setlength{\itemindent}{-2em}
-          \setlength{\leftmargin}{2em}}
-   \else
-      \list{\arabic{enumi}.}
-         {\settowidth\labelwidth{#1.}\leftmargin\labelwidth
-          \advance\leftmargin\labelsep
-          \advance\leftmargin 0.5in
-          \setlength{\itemsep}{12pt}
-          \itemindent -0.5in
-          \usecounter{enumi}}
-   \fi
-   \def\newblock{\hskip .11em plus .33em minus .07em}
-   \sloppy\clubpenalty4000\widowpenalty4000
-   \sfcode`\.=1000\relax
-   }
-
-\def\endthebibliography{\endlist\pagestyle{pageontop}}
-%    \end{macrocode}
-%
-% \subsection{Indexing}
-%    \begin{macrocode}
-\newif\if@restonecol
-\def\theindex{
-   \@restonecoltrue
-   \if@twocolumn\@restonecolfalse\fi
-   \columnseprule \z@
-   \columnsep 35pt
-   \clearpage
-   \begin{singlespace}
-   \def\section@mark{Index}
-   \twocolumn[\@makeprelimhead]
-   \parindent\z@
-   \parskip\z@ plus .3pt\relax
-   \let\item\@idxitem}
-
-\def\@idxitem{\par\hangindent 40pt}
-\def\subitem{\par\hangindent 40pt \hspace*{20pt}}
-\def\subsubitem{\par\hangindent 40pt \hspace*{30pt}}
-\def\endtheindex{\if@restonecol\onecolumn\else\clearpage\fi}
-\def\indexspace{\par \vskip 10pt plus 5pt minus 3pt\relax}
-%    \end{macrocode}
-
-%
-% END BIBLIOGRAPHY
-%
 
 % \subsection{Footnotes}
 %    \begin{macrocode}
