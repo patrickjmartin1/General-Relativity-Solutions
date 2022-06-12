@@ -1,4 +1,4 @@
-\section{In Minkowski Space, suppose $ \ast F = q  \sin{\theta}  \textrm{d} \theta  \wedge  \textrm{d} \phi$}
+\section{In Minkowski Space, suppose $ \ast F = q  \sin{\theta}  \textrm{d} \theta \wedge \textrm{d} \phi$}
 
 
 \subsection{Evaluate  $ \textrm{d} \ast F = \ast J $}
@@ -148,7 +148,13 @@ We see that this is exactly the component wise expression of Maxwell's equations
 	\end{tabular}
 \end{center}
 %
-Where the first line in the table above gives another set of equations (SG 1.93 - equation 1), and the second line shows (SG 1.93 - equation 2) $\partial_i E^i = J^0$. Thus we have shown how we can express $ \textrm{d} \ast F = \ast J $ as being equivalent to $\partial_\mu F\indices{^{\nu\mu}} = J^\nu$, and we have connected the dots from (SG 2.87) to (SG 1.96). This is the more complicated half of the simple differential form expressions for Maxwell's equations, the other being the intrinsically obvious (SG 2.85 $\rightarrow$ 1.97) $ \textrm{d} F = 0 \rightarrow \partial_{[\mu}F_{\nu\lambda]} = 0$. 
+Where the first line in the table above gives another set of equations (SG 1.93 - equation 1), and the second line shows (SG 1.93 - equation 2) 
+%
+\begin{align} \label{gauss_step_1}
+	\partial_i E^i = J^0.
+\end{align}
+%
+Thus we have shown how we can express $ \textrm{d} \ast F = \ast J $ as being equivalent to $\partial_\mu F\indices{^{\nu\mu}} = J^\nu$, and we have connected the dots from (SG 2.87) to (SG 1.96). This is the more complicated half of the simple differential form expressions for Maxwell's equations, the other being the intrinsically obvious (SG 2.85 $\rightarrow$ 1.97) $ \textrm{d} F = 0 \rightarrow \partial_{[\mu}F_{\nu\lambda]} = 0$. 
 
 As far as what the book is actually asking us to find, this may be a good stopping point for part a. In part b we are asked to find the two-form F. Either way, our next step is to actually evaluate our expression for $\ast F$. I chose to tackle this as the final step in part a, which streamlines our work in part b. Starting from (SG 2.78) 
 %
@@ -252,7 +258,7 @@ Again, exactly as we would hope. The last term is
 % 
 Again, exactly as we hoped! Let's write out our full $F$ in matrix representation
 %
-\begin{align}
+\begin{align} \label{F-matrix}
 	F_{\mu\nu} = \frac{q}{\rho^3} \begin{bmatrix}
 		& 0 & -x  &-y & -z\\ 
 		& x & 0 &0 &0 \\
@@ -261,6 +267,117 @@ Again, exactly as we hoped! Let's write out our full $F$ in matrix representatio
 	\end{bmatrix} 
 \end{align}	
 \subsection{What are the electric and magnetic fields equal to for this solution?}
-The electric field for this expression is just the electric field for a point charge $q$ stationary at the origin, i.e. the simplest example of Coulomb's law. The magnetic field is equal to $0$. This is a rewarding solution for this problem. 
+The electric field for this expression is just the electric field for a point charge $q$ (or $4 \pi q$ as we shall see in the next step) stationary at the origin, i.e. the simplest example of Coulomb's law. The magnetic field is equal to $0$. Let's write this out explicitly in spherical coordinates, starting with restating our answer in \ref{F-matrix} above which we have not yet explicitly stated for Cartesian coordinates
+%
+\begin{align}
+	F_{0 1} &= E_x = \frac{-q x}{r^3} \notag \\
+	F_{0 2} &= E_y = \frac{-q y}{r^3} \\
+	F_{0 3} &= E_z = \frac{-q z}{r^3} \notag
+\end{align}
+%
+In component form we express the entire electric field in Cartesian coordinates as
+%
+\begin{align}
+	\vec{E}_{cart}(x, y, z) &= E_x \hat{x} + E_y \hat{y} + E_z \hat{z} 
+\end{align}
+%
+Similarly in spherical coordinates 
+%
+\begin{align}
+	\vec{E}_{sph}(r, \theta, \phi) &= E_r \hat{r} + E_{\theta} \hat{\theta} + E_{\phi} \hat{\phi} 
+\end{align}
+%
+which we can express as in terms of our Cartesian terms as 
+%
+\begin{align}
+	\vec{E}_{sph}(r, \theta, \phi) &= (\vec{E}_{cart} \cdot \hat{r}) \hat{r} +(\vec{E}_{cart} \cdot \hat{\theta}) \hat{\theta} + (\vec{E}_{cart} \cdot \hat{\phi}) \hat{\phi} 
+\end{align}
+%
+Now we calculate each component
+%
+\begin{align}
+	E_r &= \vec{E}_{cart} \cdot \hat{r} = E_x \hat{x} \cdot \hat{r} + E_y \hat{y} \cdot \hat{r} + E_z \hat{z} \cdot \hat{r}
+\end{align}
+%
+Using the relations from \cite{wiki:Vector_fields_in_cylindrical_and_spherical_coordinates} for evaluating the dot products above, we can express this as
+%
+\begin{align}
+	E_r &= \bigg( \frac{-q}{r^3} \bigg) \big[ x \sin{\theta} \cos{\phi} + y \sin{\theta} \sin{\phi} + z \cos{\theta} \big]
+\end{align}
+%
+and expressing $x, y, z$ in terms of spherical coordinates we find
+%
+\begin{align}
+	E_r &= \bigg( \frac{-q}{r^3} \bigg) \big[ r \sin^2{\theta} \cos^2{\phi} + r \sin^2{\theta} \sin^2{\phi} + r \cos^2{\theta} \big] \\ 
+	E_r & = \bigg( \frac{-q}{r^2} \bigg)
+\end{align}
+%
+This is a very good start. We expect the $\hat{\theta}, \hat{\phi}$ components to be equal to zero, and let's show that our assumption is correct.
+%
+\begin{align}
+	E_{\theta} &= \vec{E}_{cart} \cdot \hat{\theta} = E_x \hat{x} \cdot \hat{\theta} + E_y \hat{y} \cdot \hat{\theta} + E_z \hat{z} \cdot \hat{\theta} \notag \\ 
+	&= \bigg( \frac{-q}{r^2} \bigg) \big[ \cos{\theta} \sin{\theta} \cos^2{\phi} + \sin{\theta} \cos{\theta} \sin^2{\phi} - \sin{\theta} \cos{\theta} \big] = 0
+\end{align}
+%
+Similarly
+%
+\begin{align}
+	E_{\phi} &= \vec{E}_{cart} \cdot \hat{\phi} = E_x \hat{x} \cdot \hat{\phi} + E_y \hat{y} \cdot \hat{\phi} + E_z \hat{z} \cdot \hat{\phi} \notag \\ 
+	&= \bigg( \frac{-q}{r^2} \bigg) \big[ - \sin{\theta} \cos{\phi} \sin{\phi} + \sin{\theta} \cos{\phi} \sin{\phi} + 0 \big] = 0
+\end{align}
+%
+and we see that our entire expression for the electric field in spherical coordinates simplifies to 
+%
+\begin{align}
+	\vec{E}(r, \theta, \phi) &= - \frac{q}{r^2} \hat{r}
+\end{align}
+%
 
 \subsection{Evaluate $ \int\limits_{V} \textrm{d} \ast F $ where $V$ is a ball of radius $R$ in euclidean three space at a fixed moment of time.}
+Part a of this problem connected the dots to show that $ \textrm{d} \ast F = \ast J $ compactly expresses the inhomogeneous Maxwell's equations. In part b we showed that there is no magnetic field associated with this electromagnetic tensor (and similarly no time-varying electric field), so that the only non-zero component of $ \textrm{d} \ast F = \ast J $ is given in \ref{gauss_step_1}. Intuitively, your gut should tell you that integrating over this expression should result return the charge within the volume $V$ which we are integrating over. 
+
+While tackling this problem, I had a few false starts in terms of how to actually evaluate the integral, however ultimately our answer will be brief and satisfying. The first insight, which we should continue to keep in mind, is that we can apply Stokes's Theorem, given in (SG E.1) as 
+%
+\begin{align}
+	\int_M \textrm{d} \omega = \int_{\partial M} \omega 
+\end{align}
+%
+and in (SG Appendix E) we are given ample explicit guidance about in working with Stokes's theorem. The next insight given to us in (SG E.2) is that we can express $\omega$ as the Hodge dual of a one form, in this case we can think that
+%
+\begin{align}
+	\omega = \ast F 
+\end{align}
+%
+and from this we can write 
+%
+\begin{align}
+	\int_V \textrm{d} \ast F = \int_{\partial V} \ast F
+\end{align}
+%
+where $ \partial V $ is the boundary of the sold sphere $V$, or in other words it is the two dimensional surface of the sphere.  Now we can write this explicitly with our given expression for $ \ast F $
+%
+\begin{align}
+	\int_{\partial V} \ast F = 	\int_{\partial V} q \sin{\theta} \textrm{d} \theta \wedge \textrm{d} \phi
+\end{align}
+%
+but we saw in (SG 2.91) that the wedge product of exterior derivatives is just the naive volume element $d^n x$, in this case we can recognize that 
+%
+\begin{align}
+	\textrm{d} \theta \wedge \textrm{d} \phi = d^2 x = d \theta d \phi
+\end{align}
+%
+so the integral becomes
+%
+\begin{align}
+	\int_{\partial V} q \sin{\theta} \textrm{d} \theta \wedge \textrm{d} \phi = \int_{\partial V} q \sin{\theta} d \theta d \phi
+\end{align}
+%
+which is a simple enough integral to evaluate
+%
+\begin{align}
+	\int_{\partial V} q \sin{\theta} d \theta d \phi &= q \int_{0}^{2 \pi} d \phi \int_{0}^{\pi} d \theta \sin{\theta} = 4 \pi q
+\end{align}
+% 
+This is exactly what we expected. Note as well that we have returned the value with a factor of $4 \pi$ in agreement with Gaussian quantities, which is exactly in line with our previous definition of the electric field. 
+
+This problem has been an excellent challenge, and has introduced me to many of the key concepts presented in the latter half of chapter 2. 
