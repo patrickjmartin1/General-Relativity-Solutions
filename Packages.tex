@@ -1,0 +1,94 @@
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage[font=footnotesize]{subfig}
+\usepackage[font=small]{caption}
+\usepackage[percent]{overpic} 
+%\usepackage{cite}	% interfering with format a
+\usepackage{array}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+
+\usepackage{graphics} % for pdf, bitmapped graphics files
+\usepackage{epsfig} % for postscript graphics files
+\usepackage{mathptmx} % assumes new font selection scheme installed
+\usepackage{times} % assumes new font selection scheme installed
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{amssymb}  % assumes amsmath package installed
+
+\usepackage{color,soul}
+\usepackage{hyperref}
+\usepackage{framed}
+\definecolor{shadecolor}{gray}{0.9}
+
+\newcommand{\TODO}[1]{{\color{red}{\textbf{\hl{#1}}}}}
+\newcommand{\ignore}[1]{}
+
+\DeclareMathOperator*{\argmin}{argmin}
+
+%\renewcommand{\baselinestretch}{1}		For single spacing :)
+
+
+\usepackage[final]{pdfpages}
+
+\newcommand{\myPart}[3]{
+\vspace{25cm}
+\begin{minipage}{0.8\linewidth}
+\begin{center}
+\end{center}
+\end{minipage}
+
+\vspace{#3}
+\begin{center}
+{\fontsize{2cm}{4.5cm}\selectfont Part  #1}
+\end{center}
+
+\vspace{1.0cm}
+\begin{center}
+{\fontsize{2cm}{4.5cm}\selectfont #2}
+\end{center}
+}
+
+\newcommand{\myCopyRight}[3]{
+\begin{center}
+
+\noindent\fbox{
+\begin{minipage}{{#3}\textwidth}
+\vspace{-2mm}
+\begin{singlespace}
+\emph{Parts of this chapter have been presented in #1. Copyright \textcircled{c} #2, IEEE.} 
+\end{singlespace} 
+\vspace{2mm}
+\end{minipage}
+\vspace{20pt}
+}
+\end{center}
+}
+
+\newcommand{\myCopyRightSpringer}[3]{
+
+\noindent\begin{center}
+
+\noindent\fbox{
+\begin{minipage}{{#3}\textwidth}
+\vspace{-2mm}
+\begin{singlespace}
+\emph{Parts of this chapter have been presented in #1. Copyright \textcircled{c} #2, Springer.} 
+\end{singlespace} 
+\vspace{2mm}
+\end{minipage}
+\vspace{20pt}
+}
+\end{center}
+}
+
+\newif\ifiThenticate
+
+\newcommand{\RemoveIFiThenticate}[1]{
+\ifiThenticate
+\else
+#1
+\fi
+}
+
+\iThenticatefalse
+
