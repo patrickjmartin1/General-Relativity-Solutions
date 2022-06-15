@@ -83,8 +83,8 @@ What we are seeing here is that the act of operating on $F$ with the Hodge dual 
 		&E_1 &0    &B_3  &-B_2 \\
 		&E_2 &-B_3 &0    &B_1  \\
 		&E_3 &B_2  &-B_1 &0    \\
-	\end{bmatrix} 
-	\rightarrow
+	\end{bmatrix} \\ \notag
+	\\
 	\ast F_{\mu\nu} = \begin{bmatrix}
 	&0   &B_1 &B_2 &B_3 \\ 
 	&-B_1 &0    &E_3  &-E_2 \\
@@ -127,8 +127,9 @@ Notice that we will only expect contributions from unique combinations of indice
 	\begin{tabular}{| c | c | c | c | c |} 
 		\hline
 		$\mu_1$ & $\mu_2$ & $\mu_3$ & $\partial_{\mu_1} \ast F_{\mu_2\mu_3} + \partial_{\mu_2} \ast F_{\mu_3\mu_1} + \partial_{\mu_3} \ast F_{\mu_1\mu_2}$ & $\ast J_{\mu_1 \mu_2 \mu_3}$ \\
-		\hline\hline
-		0 & 0 & 0 & 0 & 0 \\ 
+		\hline
+		
+		\rule{0pt}{4ex}0 & 0 & 0 & 0 & 0 \\ 
 		0 & 1 & 2 & $\partial_{0} \ast F_{12} + \partial_{1} \ast F_{20} + \partial_{2} \ast F_{01}$ & $\epsilon\indices{_{{3}{0}{1}{2}}}J^3$\\
 		. & . & . & $\partial_{t} E_3 - \partial_{1} B_2 + \partial_{2} B_1$ & $-J^3$ \\
 		\hline
@@ -141,8 +142,9 @@ We see that this is exactly the component wise expression of Maxwell's equations
 	\begin{tabular}{| c | c | c | c | c |} 
 		\hline
 		$\mu_1$ & $\mu_2$ & $\mu_3$ & $\partial_{\mu_1} \ast F_{\mu_2\mu_3} + \partial_{\mu_2} \ast F_{\mu_3\mu_1} + \partial_{\mu_3} \ast F_{\mu_1\mu_2}$ & $\ast J_{\mu_1 \mu_2 \mu_3}$ \\
-		\hline\hline
-		1 & 0 & 3 &  -$\partial_{1} B_3 - \partial_{3} B_1 + \partial_{t} E_2$ & $\epsilon\indices{_{{1}{0}{3}{2}}}J^2 = J^2$\\
+		\hline
+		
+		\rule{0pt}{4ex}1 & 0 & 3 &  -$\partial_{1} B_3 - \partial_{3} B_1 + \partial_{t} E_2$ & $\epsilon\indices{_{{1}{0}{3}{2}}}J^2 = J^2$\\
 		3 & 2 & 1 &  -$\partial_{3} E_3 - \partial_{2} E_2 - \partial_{1} E_1$ & $\epsilon\indices{_{{0}{3}{2}{1}}}J^0 = -J^0$\\
 		\hline
 	\end{tabular}
@@ -204,7 +206,7 @@ F &= - \ast \ast F = - \ast \big( q \sin{\theta}  \textrm{d} \theta  \wedge  \te
 and using (SG 2.84), where we let $U_{\mu_1} = \sin{\theta}  \textrm{d} \theta$ and $V_{\mu_2} =  \textrm{d} \phi$ both one-forms, we can write 
 %
 \begin{align}
-F_{\mu_3 \mu_4} &= - q \epsilon\indices{_{\mu_3 \mu_4}^{\mu_1 \mu_2}} U_{\mu_1} V_{\mu_2} \\
+F_{\mu_3 \mu_4} &= - q \epsilon\indices{_{\mu_3 \mu_4}^{\mu_1 \mu_2}} U_{\mu_1} V_{\mu_2} \notag \\
 &= - q \epsilon\indices{_{\mu_3 \mu_4}^{\mu_1 \mu_2}} \ \sin{\theta} \ \partial_{\mu_1} \theta \ \partial_{\mu_2} \phi
 \end{align} 
 %
@@ -213,11 +215,12 @@ where we have gone ahead and written the exterior derivative of the zero-forms a
 Now we must address the question of, "what are $ \partial_{\mu_1} \theta \ $ and $\partial_{\mu_2} \phi$? Again, our guiding principal is to write these terms out explicitly 
 %
 \begin{align}
-\partial_{\mu_1} \theta &= \frac{\partial  \theta}{\partial  x\indices{^{\mu_1}}} \\ \label{F_explicit}
+\label{F_explicit}
+\partial_{\mu_1} \theta &= \frac{\partial  \theta}{\partial  x\indices{^{\mu_1}}}  \notag \\ 
 \partial_{\mu_2} \phi &= \frac{\partial  \phi}{\partial  x\indices{^{\mu_2}}} 
 \end{align} 
 %
-and we see that each term corresponds to the derivative of a spherical coordinate with respect to the underlying Cartesian coordinates. Thought of another way, these are elements of the coordinate transformation matrix as outlined in Appendix \ref{appendix_coord_trans}. Fortunately, these relations are well known, as we were able to use the transformation matrix $\frac{\partial{\rho, \theta, \phi}}{\partial{x, y, z}}$ as given in \cite{Wiki:1}. Armed with our explicit expression in \ref{F_explicit}, we can start to write some of the terms of $F$. Let's with the low hanging fruit, first
+and we see that each term corresponds to the derivative of a spherical coordinate with respect to the underlying Cartesian coordinates. Thought of another way, these are elements of the coordinate transformation matrix as outlined in Appendix \ref{appendix_coord_trans}. Fortunately, these relations are well known, as we were able to use the transformation matrix $\frac{\partial{r, \theta, \phi}}{\partial{x, y, z}}$ as given in \cite{Wiki:1}. Armed with our explicit expression in \ref{F_explicit}, we can start to write some of the terms of $F$. Let's with the low hanging fruit, first
 %
 \begin{align}
 	\partial_{0} \theta &=\partial_{0} \phi = \frac{\partial  \theta}{\partial  t} = \frac{\partial  \phi}{\partial  t} = 0
@@ -226,40 +229,40 @@ and we see that each term corresponds to the derivative of a spherical coordinat
 which leads us to recognize that only components of $F$ with an index equal to $0$ will contribute to $F$. Said another way, in the matrix representation of $F$, only the first row and first column will have non-zero elements. In a similar vein, because \ref{F_explicit} contains $\epsilon$, we know that all diagonal elements of $F$ are also equal to $0$, and we only need to consider non-identical expressions of $\mu_1$ and $\mu_2$. Along with the anti-symmetric nature of $F$, we need really only evaluate three terms of $F$, $F_{01}, F_{02}, F_{03}$, from which we will get their anti-symmetric components as well. One last note concerning the epsilon, is that we can see from inspection that we will have no $\mu_1$ or $\mu_2$ equal to zero, thus we can trivially lower indices on $\epsilon$ and ignore the metric $\eta$ which we would otherwise need to lower indices. Our last shortcut is to recognize that $\partial_3 \phi = 0$. Now we tackle the explicit expression.
 %
 \begin{align}
-	F_{0 1} &= - q \sin{\theta} \big( \epsilon\indices{_{0123}} \ \partial_{2} \theta \ \partial_{3} \phi +  \epsilon\indices{_{0132}} \ \partial_{3} \theta \ \partial_{2} \phi \big) \\
-	&= - q \sin{\theta} \bigg( \epsilon\indices{_{0132}} \frac{-\sqrt{x^2 + y^2}}{\rho^2} \frac{x}{x^2 + y^2} \bigg) \\
-	&= - q \sin{\theta} \frac{1}{\rho^2} \frac{x}{\sqrt{x^2 + y^2}} \\
-	&= - q \sin{\theta} \cos{\phi} \frac{1}{\rho^2} \\
-	&= - q \frac{x}{\rho^3}
+	F_{0 1} &= - q \sin{\theta} \big( \epsilon\indices{_{0123}} \ \partial_{2} \theta \ \partial_{3} \phi +  \epsilon\indices{_{0132}} \ \partial_{3} \theta \ \partial_{2} \phi \big) \notag \\
+	&= - q \sin{\theta} \bigg( \epsilon\indices{_{0132}} \frac{-\sqrt{x^2 + y^2}}{r^2} \frac{x}{x^2 + y^2} \bigg)  \notag \\
+	&= - q \sin{\theta} \frac{1}{r^2} \frac{x}{\sqrt{x^2 + y^2}}  \notag \\
+	&= - q \sin{\theta} \cos{\phi} \frac{1}{r^2}  \notag \\
+	&= - q \frac{x}{r^3}
 \end{align} 
 %
 Excellent, a simple result, and one that looks awfully similar to Coulomb's law! Note that we made copious use of the relations in \cite{Wiki:1}. Let's waste no time and move on to the next term.
 %
 \begin{align}
-	F_{0 2} &= - q \sin{\theta} \big( \epsilon\indices{_{0213}} \ \partial_{1} \theta \ \partial_{3} \phi +  \epsilon\indices{_{0231}} \ \partial_{3} \theta \ \partial_{1} \phi \big) \\
-	&= - q \sin{\theta} \bigg( \epsilon\indices{_{0231}} \frac{-\sqrt{x^2 + y^2}}{\rho^2} \frac{-y}{x^2 + y^2} \bigg) \\
-	&= - q \sin{\theta} \frac{1}{\rho^2} \frac{y}{\sqrt{x^2 + y^2}} \\
-	&= - q \sin{\theta} \sin{\phi} \frac{1}{\rho^2} \\
-	&= - q \frac{y}{\rho^3}
+	F_{0 2} &= - q \sin{\theta} \big( \epsilon\indices{_{0213}} \ \partial_{1} \theta \ \partial_{3} \phi +  \epsilon\indices{_{0231}} \ \partial_{3} \theta \ \partial_{1} \phi \big)  \notag \\
+	&= - q \sin{\theta} \bigg( \epsilon\indices{_{0231}} \frac{-\sqrt{x^2 + y^2}}{r^2} \frac{-y}{x^2 + y^2} \bigg)  \notag \\
+	&= - q \sin{\theta} \frac{1}{r^2} \frac{y}{\sqrt{x^2 + y^2}}  \notag \\
+	&= - q \sin{\theta} \sin{\phi} \frac{1}{r^2}  \notag \\
+	&= - q \frac{y}{r^3}
 \end{align} 
 % 
 Again, exactly as we would hope. The last term is 
 %
 \begin{align}
-	F_{0 3} &= - q \sin{\theta} \big( \epsilon\indices{_{0312}} \ \partial_{1} \theta \ \partial_{2} \phi +  \epsilon\indices{_{0321}} \ \partial_{2} \theta \ \partial_{1} \phi \big) \\
-	&= - q \sin{\theta} \bigg(\frac{xz}{\rho^2 \sqrt{x^2 + y^2}} \frac{x}{x^2 + y^2} + \frac{yz}{\rho^2 \sqrt{x^2 + y^2}} \frac{y}{x^2 + y^2}\bigg) \\
-	&= - q \sin{\theta} \ z \bigg(\frac{x^2 + y^2}{\rho^2 \sqrt{x^2 + y^2} \left(x^2 + y^2\right)} \bigg) \\
-	&= - q \sin{\theta} \frac{1}{\rho^2} \frac{z}{\sqrt{x^2 + y^2}} \\
-	&= - q \sin{\theta} \frac{1}{\rho^2} \frac{1}{\left(\frac{\sqrt{x^2 + y^2}}{z}\right)} \\
-	&= - q \sin{\theta} \frac{1}{\rho^2} \frac{1}{\tan{\theta}} \\
-	&= - q \sin{\theta} \frac{1}{\rho^2} \frac{\cos{\theta}}{\sin{\theta}} \\
-	&= - q \frac{z}{\rho^3}
+	F_{0 3} &= - q \sin{\theta} \big( \epsilon\indices{_{0312}} \ \partial_{1} \theta \ \partial_{2} \phi +  \epsilon\indices{_{0321}} \ \partial_{2} \theta \ \partial_{1} \phi \big)  \notag \\
+	&= - q \sin{\theta} \bigg(\frac{xz}{r^2 \sqrt{x^2 + y^2}} \frac{x}{x^2 + y^2} + \frac{yz}{r^2 \sqrt{x^2 + y^2}} \frac{y}{x^2 + y^2}\bigg)  \notag \\
+	&= - q \sin{\theta} \ z \bigg(\frac{x^2 + y^2}{r^2 \sqrt{x^2 + y^2} \left(x^2 + y^2\right)} \bigg)  \notag \\
+	&= - q \sin{\theta} \frac{1}{r^2} \frac{z}{\sqrt{x^2 + y^2}}  \notag \\
+	&= - q \sin{\theta} \frac{1}{r^2} \frac{1}{\left(\frac{\sqrt{x^2 + y^2}}{z}\right)}  \notag \\
+	&= - q \sin{\theta} \frac{1}{r^2} \frac{1}{\tan{\theta}}  \notag \\
+	&= - q \sin{\theta} \frac{1}{r^2} \frac{\cos{\theta}}{\sin{\theta}}  \notag \\
+	&= - q \frac{z}{r^3}
 \end{align} 
 % 
 Again, exactly as we hoped! Let's write out our full $F$ in matrix representation
 %
 \begin{align} \label{F-matrix}
-	F_{\mu\nu} = \frac{q}{\rho^3} \begin{bmatrix}
+	F_{\mu\nu} = \frac{q}{r^3} \begin{bmatrix}
 		& 0 & -x  &-y & -z\\ 
 		& x & 0 &0 &0 \\
 		& y & 0 &0 &0 \\
@@ -308,7 +311,7 @@ Using the relations from \cite{wiki:Vector_fields_in_cylindrical_and_spherical_c
 and expressing $x, y, z$ in terms of spherical coordinates we find
 %
 \begin{align}
-	E_r &= \bigg( \frac{-q}{r^3} \bigg) \big[ r \sin^2{\theta} \cos^2{\phi} + r \sin^2{\theta} \sin^2{\phi} + r \cos^2{\theta} \big] \\ 
+	E_r &= \bigg( \frac{-q}{r^3} \bigg) \big[ r \sin^2{\theta} \cos^2{\phi} + r \sin^2{\theta} \sin^2{\phi} + r \cos^2{\theta} \big]  \notag  \\ 
 	E_r & = \bigg( \frac{-q}{r^2} \bigg)
 \end{align}
 %
@@ -380,4 +383,4 @@ which is a simple enough integral to evaluate
 % 
 This is exactly what we expected. Note as well that we have returned the value with a factor of $4 \pi$ in agreement with Gaussian quantities, which is exactly in line with our previous definition of the electric field. 
 
-This problem has been an excellent challenge, and has introduced me to many of the key concepts presented in the latter half of chapter 2. 
+This problem has been an excellent challenge and introduced many of the key concepts presented in the latter half of chapter 2. 
